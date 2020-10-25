@@ -8,7 +8,8 @@
 #### Project Topic
 For this project, I will conduct the comparison of three multi-class text classification approaches (BERT, LSTM, fastText).
 Specifically, I will train each of the model on the training set (80% of data) and evaluate their performance on the test 
-set (20% of data) using metrics such as accuracy, precision, recall, and F-1 score.
+set (20% of data) using metrics such as accuracy, precision, recall, and F-1 score. The best model will then be productized
+to take review text(s) as input and the output corresponding predicted review score (1-5).
 
 #### Dataset
 The dataset chosen for this project is Kindle Store Review data from [Amazon Review Data (2018)](http://deepyeti.ucsd.edu/jianmo/amazon/index.html). 
