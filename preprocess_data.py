@@ -14,6 +14,7 @@ def process_data(in_file_path, out_file_path, columns_to_keep, nrows):
     raw = pd.read_json(in_file_path, compression='infer', lines=True)
     raw['reviewTime'] = pd.to_datetime(raw['unixReviewTime'], unit='s')
     filtered_df = raw[raw['verified'] == True][0:nrows][columns_to_keep]
+    filtered_df = filtered_df.rename(columns={"overall": "score"})
     filtered_df.to_csv(out_file_path, index=False)
 
 
