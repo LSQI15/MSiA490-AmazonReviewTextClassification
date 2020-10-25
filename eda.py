@@ -61,7 +61,7 @@ def main():
     main function to do exploratory data analysis
     :return: None
     """
-    in_file_path = 'kindle_store_reviews.csv'
+    in_file_path = 'Data/kindle_store_reviews.csv'
     score_distribution_graph = 'EDA/score_distribution_graph.png'
 
     df = read_data(in_file_path)

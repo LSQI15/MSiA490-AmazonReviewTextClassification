@@ -24,7 +24,7 @@ def main():
     :return: None
     """
     in_file_path = '/Users/siqili/Downloads/Kindle_Store.json.gz'
-    out_file_path = 'kindle_store_reviews.csv'
+    out_file_path = 'Data/kindle_store_reviews.csv'
     columns_to_keep = ['overall', 'reviewTime', 'reviewText']
     nrows = 1000000
     process_data(in_file_path, out_file_path, columns_to_keep, nrows)
