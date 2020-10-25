@@ -4,12 +4,12 @@
 ### Siqi Li
 
 <!-- toc -->
+
 #### Project Topic
 For this project, I will conduct the comparison of three multi-class text classification approaches (BERT, LSTM, fastText).
 Specifically, I will train each of the model on the training set (80% of data) and evaluate their performance on the test 
 set (20% of data) using metrics such as accuracy, precision, recall, and F-1 score.
 
-<!-- toc -->
 #### Dataset
 The dataset chosen for this project is Kindle Store Review data from [Amazon Review Data (2018)](http://deepyeti.ucsd.edu/jianmo/amazon/index.html). 
 
@@ -23,7 +23,6 @@ which the review was written.
 
 Link to dataset: http://deepyeti.ucsd.edu/jianmo/amazon/index.html
 
-<!-- toc -->
 #### Citation
 * Justifying recommendations using distantly-labeled reviews and fined-grained aspects. Jianmo Ni, Jiacheng Li, Julian McAuley. 
 Empirical Methods in Natural Language Processing (EMNLP), 2019.
