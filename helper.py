@@ -1,8 +1,8 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics import classification_report
+from sklearn.metrics import classification_report, plot_confusion_matrix
 import pandas as pd
 from sklearn.metrics import precision_recall_fscore_support as score
-import csv
+import matplotlib.pyplot as plt
 
 
 def tfidf_vectorizer(X_train, X_test, ngram_range):
@@ -24,7 +24,7 @@ def tfidf_vectorizer(X_train, X_test, ngram_range):
     return X_train_tfidf, X_test_tfidf
 
 
-def model_training_testing(model, X_train, X_test, y_train, y_test, ngram_range, out_file_path):
+def model_training_testing(model, X_train, X_test, y_train, y_test, ngram_range, out_file_name):
     """
     function to train a given model and test its performance in the test set
     :param model: model to train and test
@@ -33,7 +33,7 @@ def model_training_testing(model, X_train, X_test, y_train, y_test, ngram_range,
     :param y_train: y (labels) in the training set
     :param y_test: y (labels) in the test set
     :param ngram_range: the lower and upper boundary of the range of n-values for different word n-grams to be extracted
-    :param out_file_path: path to txt file that stores model results
+    :param out_file_name: name of the .txt and .png files that store model results
     """
     # transform input data using tfidf
     X_train_tfidf, X_test_tfidf = tfidf_vectorizer(X_train, X_test, ngram_range)
@@ -46,8 +46,11 @@ def model_training_testing(model, X_train, X_test, y_train, y_test, ngram_range,
     accuracy = model.score(X_test_tfidf, y_test)
     precision, recall, fscore, train_support = score(y_test, y_pred, average='weighted')
 
+    plot_confusion_matrix(model, X_test_tfidf, y_test, cmap=plt.cm.Blues, normalize='true')
+    plt.savefig(out_file_name+'.png')
+
     # output model results to a txt file
-    outF = open(out_file_path, "w")
+    outF = open(out_file_name+'.txt', "w")
     outF.write('Model Parameter: ')
     outF.write(str(model).replace('\n                   ', ''))
     outF.write('\nBOW representation: TFIDF')
