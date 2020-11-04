@@ -1,6 +1,7 @@
 import re
 import pandas as pd
 
+
 def clean_review(review):
     """
     function to clean raw text reviews by removing special characters, extra space, punctuations, etc
@@ -35,8 +36,8 @@ def main():
     main function to process the preprocessed data
     :return: None
     """
-    in_file_path = 'Data/kindle_store_reviews.csv'
-    out_file_path = 'Data/processed_kindle_store_reviews.csv'
+    in_file_path = 'Data/video_reviews.csv'
+    out_file_path = 'Data/processed_video_reviews.csv'
     df = pd.read_csv(in_file_path).dropna()  # some reviews have only score, so drop them
     processed_df = process(df, 'reviewText')  # clean all reviews
     processed_df.to_csv(out_file_path, index=False)

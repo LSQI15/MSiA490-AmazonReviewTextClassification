@@ -1,33 +1,59 @@
 import pandas as pd
+import gzip
 
 
-def preprocess_data(in_file_path, out_file_path, columns_to_keep):
+def parse(filename):
     """
-    function to pre-process the raw data;
-    convert unix time to datetime; keep only the first nrows rows with selected columns_to_keep;
-    :param in_file_path: the path to the raw data file
-    :param out_file_path: the path to the output data file
+    function to parse the raw data
+    :param filename: path to raw data file
+    :return: a dictionary containing all raw data
+    """
+    f = gzip.open(filename, 'r')
+    entry = {}
+    for l in f:
+        l = l.strip()
+        colonPos = str(l).find(':')
+        if colonPos == -1:
+            yield entry
+            entry = {}
+            continue
+        eName = l[:colonPos - 2].decode('utf-8')
+        rest = l[colonPos:].decode('utf-8')
+        entry[eName] = rest
+    yield entry
+
+
+def data_preprocess(filename, columns_to_keep):
+    """
+    main function to process the raw data and return raw data in a pandas df
+    :param filename: path to raw data file
     :param columns_to_keep: a list of columns to keep
-    :param nrows: number of rows to keep
-    :return: None
+    :return: a pandas data frame containing raw data
     """
-    raw = pd.read_json(in_file_path, compression='infer', lines=True)
-    raw['reviewTime'] = pd.to_datetime(raw['unixReviewTime'], unit='s')
-    filtered_df = raw[raw['verified'] == True][columns_to_keep]
-    filtered_df = filtered_df.dropna()
-    filtered_df = filtered_df.rename(columns={"overall": "score"})
-    filtered_df.to_csv(out_file_path, index=False)
+    # add all review to a list
+    review = []
+    for e in parse(filename):
+        review.append(e)
+    # convert records to a pandas data frame
+    review_df = pd.DataFrame.from_records(review)
+    review_df = review_df.rename(columns={'review/score': "score", 'review/text': 'reviewText'})
+    review_df = review_df[columns_to_keep].dropna()
+    # convert review score to integer type
+    review_df['score'] = pd.to_numeric(review_df['score']).astype(int)
+    return review_df
 
 
 def main():
     """
-    main function to pre-process the raw data
+    main function to pre-process the raw data (convert from json to pandas data frame,
+    select columns to keep and drop missing values)
     :return: None
     """
-    in_file_path = '/Users/siqili/Downloads/Kindle_Store.json.gz'
-    out_file_path = 'Data/kindle_store_reviews.csv'
-    columns_to_keep = ['overall', 'reviewText']
-    preprocess_data(in_file_path, out_file_path, columns_to_keep)
+    in_file_path = '/Users/siqili/Downloads/Amazon_Instant_Video.txt.gz'
+    out_file_path = 'Data/video_reviews.csv'
+    columns_to_keep = ['score', 'reviewText']
+    preprocessed_data = data_preprocess(in_file_path, columns_to_keep)
+    preprocessed_data.to_csv(out_file_path, index=False)
 
 
 if __name__ == "__main__":
