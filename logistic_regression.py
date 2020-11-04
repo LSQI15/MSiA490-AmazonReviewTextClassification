@@ -11,27 +11,26 @@ def train_test_logistic_regression_models(X_train, X_test, y_train, y_test):
     :param X_test: X  (features) in the test set
     :param y_train: y (labels) in the training set
     :param y_test: y (labels) in the test set
-    :return: a list containing the classification report for all models
     """
     # baseline model
     print('\nlogistic_regression_model0')
     model0 = LogisticRegression(random_state=115, solver='liblinear')
-    model_training_testing(model0, X_train, X_test, y_train, y_test, (1, 1), 'Model_Results/LR_0.csv')
+    model_training_testing(model0, X_train, X_test, y_train, y_test, (1, 1), 'Model_Results/LR_0')
 
     # model 1
     print('\nlogistic_regression_model1')
     model1 = LogisticRegression(random_state=115, solver='liblinear')
-    model_training_testing(model1, X_train, X_test, y_train, y_test, (1, 2), 'Model_Results/LR_1.csv')
+    model_training_testing(model1, X_train, X_test, y_train, y_test, (1, 2), 'Model_Results/LR_1')
 
     # model 2
     print('\nlogistic_regression_model2')
     model2 = LogisticRegression(random_state=115, solver='liblinear', penalty='l1')
-    model_training_testing(model2, X_train, X_test, y_train, y_test, (1, 1), 'Model_Results/LR_2.csv')
+    model_training_testing(model2, X_train, X_test, y_train, y_test, (1, 1), 'Model_Results/LR_2')
 
     # model 3
     print('\nlogistic_regression_model3')
     model3 = LogisticRegression(random_state=115, solver='liblinear', C=2)
-    model_training_testing(model3, X_train, X_test, y_train, y_test, (1, 1), 'Model_Results/LR_3.csv')
+    model_training_testing(model3, X_train, X_test, y_train, y_test, (1, 1), 'Model_Results/LR_3')
 
 
 def main():
