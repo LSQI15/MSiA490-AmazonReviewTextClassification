@@ -35,12 +35,11 @@ def main():
     main function to process the preprocessed data
     :return: None
     """
-    num_rows=500000
     in_file_path = 'Data/kindle_store_reviews.csv'
     out_file_path = 'Data/processed_kindle_store_reviews.csv'
-    df = pd.read_csv(in_file_path).dropna().head(num_rows)
-    processed_df = process(df, 'reviewText')
-    processed_df.to_csv(out_file_path)
+    df = pd.read_csv(in_file_path).dropna()  # some reviews have only score, so drop them
+    processed_df = process(df, 'reviewText')  # clean all reviews
+    processed_df.to_csv(out_file_path, index=False)
 
 
 if __name__ == "__main__":
