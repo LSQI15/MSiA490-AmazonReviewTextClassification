@@ -1,16 +1,16 @@
 Model Parameter: LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,intercept_scaling=1, l1_ratio=None, max_iter=100,multi_class='auto', n_jobs=None, penalty='l2',random_state=115, solver='liblinear', tol=0.0001, verbose=0,warm_start=False)
 BOW representation: TFIDF
-Accuracy: 0.627512
-Precision: 0.5838174649824122
-Recall: 0.627512
-Fscore: 0.5834539598626443
+Accuracy: 0.654488
+Precision: 0.6171239497109519
+Recall: 0.654488
+Fscore: 0.6170137639430047
 Classification Report
               precision    recall  f1-score        support
-1              0.615280  0.458297  0.525311    6906.000000
-2              0.407431  0.102976  0.164401    6283.000000
-3              0.448509  0.282260  0.346474   13856.000000
-4              0.444834  0.261856  0.329656   29100.000000
-5              0.682724  0.916360  0.782474   68855.000000
-accuracy       0.627512  0.627512  0.627512       0.627512
-macro avg      0.519756  0.404350  0.429663  125000.000000
-weighted avg   0.583817  0.627512  0.583454  125000.000000
+1              0.680116  0.681049  0.680582   13118.000000
+2              0.490633  0.180297  0.263692    8425.000000
+3              0.470696  0.267134  0.340834   13409.000000
+4              0.466011  0.302206  0.366645   24930.000000
+5              0.708804  0.925121  0.802643   65118.000000
+accuracy       0.654488  0.654488  0.654488       0.654488
+macro avg      0.563252  0.471161  0.490879  125000.000000
+weighted avg   0.617124  0.654488  0.617014  125000.000000
