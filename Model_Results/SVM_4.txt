@@ -1,0 +1,19 @@
+Model Parameter: LinearSVC(C=1.0, class_weight=None, dual=True, fit_intercept=True,
+          intercept_scaling=1, loss='squared_hinge', max_iter=1000,
+          multi_class='ovr', penalty='l2', random_state=115, tol=0.0001,
+          verbose=0)
+BOW representation: TFIDF
+Accuracy: 0.728376
+Precision: 0.7137558209878155
+Recall: 0.728376
+Fscore: 0.7150766617226076
+Classification Report
+              precision    recall  f1-score        support
+1              0.720883  0.788916  0.753367   13118.000000
+2              0.643907  0.379466  0.477521    8425.000000
+3              0.602416  0.450071  0.515217   13409.000000
+4              0.574866  0.499278  0.534412   24930.000000
+5              0.797457  0.906339  0.848419   65118.000000
+accuracy       0.728376  0.728376  0.728376       0.728376
+macro avg      0.667906  0.604814  0.625787  125000.000000
+weighted avg   0.713756  0.728376  0.715077  125000.000000
