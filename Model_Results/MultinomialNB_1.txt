@@ -1,0 +1,16 @@
+Model Parameter: MultinomialNB(alpha=0, class_prior=None, fit_prior=True)
+BOW representation: TFIDF
+Accuracy: 0.628968
+Precision: 0.6287026880080215
+Recall: 0.628968
+Fscore: 0.5984433358143252
+Classification Report
+              precision    recall  f1-score        support
+1              0.817706  0.404864  0.541580   13118.000000
+2              0.709783  0.256617  0.376951    8425.000000
+3              0.582514  0.278246  0.376602   13409.000000
+4              0.455910  0.375170  0.411618   24930.000000
+5              0.655801  0.891674  0.755761   65118.000000
+accuracy       0.628968  0.628968  0.628968       0.628968
+macro avg      0.644343  0.441314  0.492502  125000.000000
+weighted avg   0.628703  0.628968  0.598443  125000.000000
