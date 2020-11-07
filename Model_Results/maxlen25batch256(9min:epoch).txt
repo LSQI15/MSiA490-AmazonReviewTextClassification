@@ -1,0 +1,268 @@
+Epoch 1
+Training loss: 0.9474164743264821
+Val Loss =  0.9534229820646594
+Val F1 =  0.5606781373316664
+Accuracy Score =  0.61748
+              precision    recall  f1-score   support
+
+           1       0.62      0.58      0.60     10481
+           2       0.39      0.14      0.21      6729
+           3       0.44      0.21      0.28     10848
+           4       0.42      0.18      0.25     19851
+           5       0.66      0.94      0.77     52091
+
+    accuracy                           0.62    100000
+   macro avg       0.51      0.41      0.42    100000
+weighted avg       0.57      0.62      0.56    100000
+
+
+Epoch 2
+Training loss: 0.9162070785511478
+Val Loss =  0.9319334710040665
+Val F1 =  0.5925974772702718
+Accuracy Score =  0.62686
+              precision    recall  f1-score   support
+
+           1       0.63      0.60      0.62     10481
+           2       0.39      0.20      0.26      6729
+           3       0.41      0.26      0.32     10848
+           4       0.41      0.27      0.32     19851
+           5       0.70      0.90      0.79     52091
+
+    accuracy                           0.63    100000
+   macro avg       0.51      0.45      0.46    100000
+weighted avg       0.58      0.63      0.59    100000
+
+
+Epoch 3
+Training loss: 0.8704601081990311
+Val Loss =  0.9265088167641778
+Val F1 =  0.6075449878035969
+Accuracy Score =  0.62963
+              precision    recall  f1-score   support
+
+           1       0.57      0.68      0.62     10481
+           2       0.40      0.18      0.25      6729
+           3       0.40      0.35      0.37     10848
+           4       0.43      0.32      0.37     19851
+           5       0.74      0.85      0.79     52091
+
+    accuracy                           0.63    100000
+   macro avg       0.51      0.48      0.48    100000
+weighted avg       0.60      0.63      0.61    100000
+
+
+Epoch 4
+Training loss: 0.8305894386592921
+Val Loss =  0.9212192810709824
+Val F1 =  0.6116467060973453
+Accuracy Score =  0.63854
+              precision    recall  f1-score   support
+
+           1       0.65      0.62      0.64     10481
+           2       0.40      0.22      0.29      6729
+           3       0.44      0.29      0.35     10848
+           4       0.42      0.32      0.36     19851
+           5       0.72      0.89      0.80     52091
+
+    accuracy                           0.64    100000
+   macro avg       0.53      0.47      0.49    100000
+weighted avg       0.60      0.64      0.61    100000
+
+
+Epoch 5
+Training loss: 0.7920218015128958
+Val Loss =  0.9259034989739928
+Val F1 =  0.6146683779963759
+Accuracy Score =  0.64226
+              precision    recall  f1-score   support
+
+           1       0.62      0.66      0.64     10481
+           2       0.40      0.24      0.30      6729
+           3       0.44      0.31      0.36     10848
+           4       0.44      0.30      0.36     19851
+           5       0.73      0.89      0.80     52091
+
+    accuracy                           0.64    100000
+   macro avg       0.53      0.48      0.49    100000
+weighted avg       0.61      0.64      0.61    100000
+
+
+Epoch 6
+Training loss: 0.7567962644501367
+Val Loss =  0.9385457157783801
+Val F1 =  0.6198849834102688
+Accuracy Score =  0.64471
+              precision    recall  f1-score   support
+
+           1       0.64      0.65      0.64     10481
+           2       0.41      0.24      0.30      6729
+           3       0.44      0.34      0.38     10848
+           4       0.45      0.32      0.37     19851
+           5       0.73      0.89      0.80     52091
+
+    accuracy                           0.64    100000
+   macro avg       0.53      0.49      0.50    100000
+weighted avg       0.61      0.64      0.62    100000
+
+
+Epoch 7
+Training loss: 0.7243853506947356
+Val Loss =  0.9405767187438048
+Val F1 =  0.6250680789270725
+Accuracy Score =  0.6461
+              precision    recall  f1-score   support
+
+           1       0.61      0.68      0.64     10481
+           2       0.42      0.24      0.31      6729
+           3       0.43      0.35      0.39     10848
+           4       0.45      0.34      0.39     19851
+           5       0.74      0.87      0.80     52091
+
+    accuracy                           0.65    100000
+   macro avg       0.53      0.50      0.51    100000
+weighted avg       0.62      0.65      0.63    100000
+
+
+Epoch 8
+Training loss: 0.6937060969728579
+Val Loss =  0.9607850366541187
+Val F1 =  0.6332652799362046
+Accuracy Score =  0.64777
+              precision    recall  f1-score   support
+
+           1       0.65      0.65      0.65     10481
+           2       0.41      0.29      0.34      6729
+           3       0.44      0.35      0.39     10848
+           4       0.45      0.39      0.41     19851
+           5       0.76      0.86      0.80     52091
+
+    accuracy                           0.65    100000
+   macro avg       0.54      0.51      0.52    100000
+weighted avg       0.63      0.65      0.63    100000
+
+
+Epoch 9
+Training loss: 0.668408074557438
+Val Loss =  0.966388599189651
+Val F1 =  0.635211866252953
+Accuracy Score =  0.65093
+              precision    recall  f1-score   support
+
+           1       0.65      0.65      0.65     10481
+           2       0.41      0.30      0.35      6729
+           3       0.45      0.34      0.39     10848
+           4       0.45      0.38      0.41     19851
+           5       0.75      0.86      0.81     52091
+
+    accuracy                           0.65    100000
+   macro avg       0.54      0.51      0.52    100000
+weighted avg       0.63      0.65      0.64    100000
+
+
+Epoch 10
+Training loss: 0.6436423166242076
+Val Loss =  0.9857008928228217
+Val F1 =  0.6374073257021101
+Accuracy Score =  0.65266
+              precision    recall  f1-score   support
+
+           1       0.65      0.66      0.65     10481
+           2       0.43      0.30      0.35      6729
+           3       0.44      0.37      0.40     10848
+           4       0.46      0.37      0.41     19851
+           5       0.76      0.86      0.81     52091
+
+    accuracy                           0.65    100000
+   macro avg       0.55      0.51      0.53    100000
+weighted avg       0.63      0.65      0.64    100000
+
+
+Epoch 11
+Training loss: 0.6229466687809254
+Val Loss =  0.9923199598136765
+Val F1 =  0.6387237013196103
+Accuracy Score =  0.65333
+              precision    recall  f1-score   support
+
+           1       0.64      0.66      0.65     10481
+           2       0.42      0.31      0.35      6729
+           3       0.46      0.34      0.39     10848
+           4       0.46      0.39      0.42     19851
+           5       0.76      0.86      0.81     52091
+
+    accuracy                           0.65    100000
+   macro avg       0.55      0.51      0.53    100000
+weighted avg       0.63      0.65      0.64    100000
+
+
+Epoch 12
+Training loss: 0.605179034378463
+Val Loss =  1.0020163377837452
+Val F1 =  0.6411649689409049
+Accuracy Score =  0.65268
+              precision    recall  f1-score   support
+
+           1       0.66      0.65      0.65     10481
+           2       0.44      0.30      0.35      6729
+           3       0.44      0.38      0.41     10848
+           4       0.45      0.41      0.43     19851
+           5       0.77      0.85      0.80     52091
+
+    accuracy                           0.65    100000
+   macro avg       0.55      0.52      0.53    100000
+weighted avg       0.63      0.65      0.64    100000
+
+
+Epoch 13
+Training loss: 0.5922320699241782
+Val Loss =  1.0141302717616185
+Val F1 =  0.6414882029892645
+Accuracy Score =  0.65399
+              precision    recall  f1-score   support
+
+           1       0.64      0.67      0.66     10481
+           2       0.42      0.32      0.36      6729
+           3       0.45      0.37      0.41     10848
+           4       0.46      0.39      0.42     19851
+           5       0.76      0.85      0.81     52091
+
+    accuracy                           0.65    100000
+   macro avg       0.55      0.52      0.53    100000
+weighted avg       0.63      0.65      0.64    100000
+
+
+Epoch 14
+Training loss: 0.5816585298577563
+Val Loss =  1.0173044755025897
+Val F1 =  0.6419643042630635
+Accuracy Score =  0.65519
+              precision    recall  f1-score   support
+
+           1       0.65      0.67      0.66     10481
+           2       0.43      0.31      0.36      6729
+           3       0.45      0.37      0.41     10848
+           4       0.46      0.39      0.42     19851
+           5       0.76      0.86      0.81     52091
+
+    accuracy                           0.66    100000
+   macro avg       0.55      0.52      0.53    100000
+weighted avg       0.63      0.66      0.64    100000
+
+
+Epoch 15
+Training loss: 0.5741706811420748
+Val Loss =  1.0218563285630073
+Val F1 =  0.6433007714962848
+Accuracy Score =  0.65522
+              precision    recall  f1-score   support
+
+           1       0.66      0.66      0.66     10481
+           2       0.43      0.31      0.36      6729
+           3       0.45      0.37      0.41     10848
+           4       0.46      0.41      0.43     19851
+           5       0.77      0.85      0.81     52091
+
+    accuracy                           0.66    100000
+   macro avg       0.55      0.52      0.53    100000
+weighted avg       0.64      0.66      0.64    100000
