@@ -27,6 +27,9 @@ def dataset_stats(df):
     print('\nNumber of reviews: ' + str(df.shape[0]))
     # Average length of reviews
     print('\nAverage length of reviews: ' + str(df['reviewText'].apply(len).mean()))
+    # 5-number summary statistics
+    print('Five-number summary statistics:')
+    print(df['reviewText'].apply(len).describe())
     # Number of labels
     print('\nNumber of unique labels: ' + str(len(df['score'].unique())))
 
@@ -61,7 +64,7 @@ def main():
     main function to do exploratory data analysis
     :return: None
     """
-    in_file_path = 'Data/kindle_store_reviews.csv'
+    in_file_path = 'Data/processed_video_reviews.csv'
     score_distribution_graph = 'EDA/score_distribution_graph.png'
 
     df = read_data(in_file_path)
