@@ -1,0 +1,197 @@
+Found GPU at: /device:GPU:0
+Start training BERT model.
+Number of epochs:  10
+Max input length:  300
+Batch size:  16
+HBox(children=(HTML(value=''), FloatProgress(value=0.0, max=10.0), HTML(value='')))
+HBox(children=(HTML(value='Epoch 1'), FloatProgress(value=0.0, max=25000.0), HTML(value='')))
+
+Epoch 1
+Training loss: 0.7510203973042965
+Val Loss =  0.6963352017199993
+Val F1 =  0.6938130091203474
+Accuracy Score =  0.71583
+              precision    recall  f1-score   support
+
+           1       0.74      0.78      0.76     10640
+           2       0.49      0.46      0.48      6880
+           3       0.55      0.45      0.50     10661
+           4       0.56      0.33      0.41     19693
+           5       0.79      0.94      0.86     52126
+
+    accuracy                           0.72    100000
+   macro avg       0.63      0.59      0.60    100000
+weighted avg       0.69      0.72      0.69    100000
+
+HBox(children=(HTML(value='Epoch 2'), FloatProgress(value=0.0, max=25000.0), HTML(value='')))
+
+Epoch 2
+Training loss: 0.6327439919045568
+Val Loss =  0.668130117661953
+Val F1 =  0.7230385432731158
+Accuracy Score =  0.72985
+              precision    recall  f1-score   support
+
+           1       0.76      0.80      0.78     10640
+           2       0.55      0.45      0.49      6880
+           3       0.52      0.56      0.54     10661
+           4       0.56      0.46      0.51     19693
+           5       0.83      0.89      0.86     52126
+
+    accuracy                           0.73    100000
+   macro avg       0.65      0.63      0.64    100000
+weighted avg       0.72      0.73      0.72    100000
+
+HBox(children=(HTML(value='Epoch 3'), FloatProgress(value=0.0, max=25000.0), HTML(value='')))
+
+Epoch 3
+Training loss: 0.5428562021666765
+Val Loss =  0.6903411790078878
+Val F1 =  0.727887811034207
+Accuracy Score =  0.73783
+              precision    recall  f1-score   support
+
+           1       0.73      0.85      0.78     10640
+           2       0.55      0.43      0.48      6880
+           3       0.55      0.56      0.56     10661
+           4       0.59      0.45      0.51     19693
+           5       0.83      0.90      0.87     52126
+
+    accuracy                           0.74    100000
+   macro avg       0.65      0.64      0.64    100000
+weighted avg       0.72      0.74      0.73    100000
+
+HBox(children=(HTML(value='Epoch 4'), FloatProgress(value=0.0, max=25000.0), HTML(value='')))
+
+Epoch 4
+Training loss: 0.4571359425185621
+Val Loss =  0.7453966813743115
+Val F1 =  0.7400874620215298
+Accuracy Score =  0.74672
+              precision    recall  f1-score   support
+
+           1       0.79      0.79      0.79     10640
+           2       0.55      0.52      0.53      6880
+           3       0.60      0.52      0.56     10661
+           4       0.58      0.51      0.54     19693
+           5       0.84      0.90      0.87     52126
+
+    accuracy                           0.75    100000
+   macro avg       0.67      0.65      0.66    100000
+weighted avg       0.74      0.75      0.74    100000
+
+HBox(children=(HTML(value='Epoch 5'), FloatProgress(value=0.0, max=25000.0), HTML(value='')))
+
+Epoch 5
+Training loss: 0.38313839096449315
+Val Loss =  0.7755854348820448
+Val F1 =  0.7464624947108408
+Accuracy Score =  0.74961
+              precision    recall  f1-score   support
+
+           1       0.80      0.78      0.79     10640
+           2       0.56      0.54      0.55      6880
+           3       0.59      0.56      0.57     10661
+           4       0.58      0.55      0.56     19693
+           5       0.85      0.89      0.87     52126
+
+    accuracy                           0.75    100000
+   macro avg       0.68      0.66      0.67    100000
+weighted avg       0.74      0.75      0.75    100000
+
+HBox(children=(HTML(value='Epoch 6'), FloatProgress(value=0.0, max=25000.0), HTML(value='')))
+
+Epoch 6
+Training loss: 0.319344134905003
+Val Loss =  0.8706577112439274
+Val F1 =  0.7450785469107161
+Accuracy Score =  0.74733
+              precision    recall  f1-score   support
+
+           1       0.79      0.79      0.79     10640
+           2       0.54      0.56      0.55      6880
+           3       0.59      0.55      0.57     10661
+           4       0.58      0.55      0.56     19693
+           5       0.85      0.88      0.87     52126
+
+    accuracy                           0.75    100000
+   macro avg       0.67      0.67      0.67    100000
+weighted avg       0.74      0.75      0.75    100000
+
+HBox(children=(HTML(value='Epoch 7'), FloatProgress(value=0.0, max=25000.0), HTML(value='')))
+
+Epoch 7
+Training loss: 0.26813550449024887
+Val Loss =  0.9512393912266195
+Val F1 =  0.7497965801667007
+Accuracy Score =  0.75088
+              precision    recall  f1-score   support
+
+           1       0.82      0.78      0.80     10640
+           2       0.58      0.54      0.56      6880
+           3       0.59      0.58      0.59     10661
+           4       0.57      0.57      0.57     19693
+           5       0.86      0.88      0.87     52126
+
+    accuracy                           0.75    100000
+   macro avg       0.68      0.67      0.68    100000
+weighted avg       0.75      0.75      0.75    100000
+
+HBox(children=(HTML(value='Epoch 8'), FloatProgress(value=0.0, max=25000.0), HTML(value='')))
+
+Epoch 8
+Training loss: 0.2304088385952264
+Val Loss =  1.0576370168535412
+Val F1 =  0.7491695211588448
+Accuracy Score =  0.75087
+              precision    recall  f1-score   support
+
+           1       0.82      0.76      0.79     10640
+           2       0.56      0.56      0.56      6880
+           3       0.61      0.56      0.58     10661
+           4       0.57      0.57      0.57     19693
+           5       0.85      0.88      0.87     52126
+
+    accuracy                           0.75    100000
+   macro avg       0.68      0.67      0.67    100000
+weighted avg       0.75      0.75      0.75    100000
+
+HBox(children=(HTML(value='Epoch 9'), FloatProgress(value=0.0, max=25000.0), HTML(value='')))
+
+Epoch 9
+Training loss: 0.20135215867905412
+Val Loss =  1.1887586305397377
+Val F1 =  0.7490727444857912
+Accuracy Score =  0.74931
+              precision    recall  f1-score   support
+
+           1       0.80      0.80      0.80     10640
+           2       0.58      0.54      0.56      6880
+           3       0.58      0.60      0.59     10661
+           4       0.57      0.57      0.57     19693
+           5       0.86      0.86      0.86     52126
+
+    accuracy                           0.75    100000
+   macro avg       0.68      0.67      0.68    100000
+weighted avg       0.75      0.75      0.75    100000
+
+HBox(children=(HTML(value='Epoch 10'), FloatProgress(value=0.0, max=25000.0), HTML(value='')))
+
+Epoch 10
+Training loss: 0.18057084072922355
+Val Loss =  1.2715017198606209
+Val F1 =  0.7505131217510823
+Accuracy Score =  0.75123
+              precision    recall  f1-score   support
+
+           1       0.81      0.79      0.80     10640
+           2       0.58      0.56      0.57      6880
+           3       0.60      0.58      0.59     10661
+           4       0.57      0.57      0.57     19693
+           5       0.86      0.87      0.87     52126
+
+    accuracy                           0.75    100000
+   macro avg       0.68      0.67      0.68    100000
+weighted avg       0.75      0.75      0.75    100000
+
+
