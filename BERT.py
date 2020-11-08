@@ -9,8 +9,10 @@ from transformers import BertTokenizer
 from transformers import BertForSequenceClassification
 from transformers import AdamW, get_linear_schedule_with_warmup
 from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from sklearn.metrics import f1_score
+import seaborn as sns
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import re
@@ -69,13 +71,15 @@ def evaluate(dataloader_test, model, device):
     return loss_val_avg, predictions, true_vals
 
 
-def run_evaluation(dataloader_test, model, device, encoder):
+def run_evaluation(dataloader_test, model, device, encoder, epoch, model_name):
     """
     function to run the evaluation for BERT model
     :param dataloader_test: test set
     :param model: the BERT model object
     :param device: which device to use
     :param encoder: the encoder used to covert raw labels
+    :param epoch: the current epoch of the training
+    :param model_name: name of the model
     :return: None
     """
     # Validation Loss and Validation F-1 Score
@@ -92,6 +96,15 @@ def run_evaluation(dataloader_test, model, device, encoder):
     # Classification Report
     reprot = classification_report(true_category, predicted_category)
     print(reprot)
+    # Confusion Matrix
+    confusion = confusion_matrix(true_category, predicted_category)
+    confusion_df = pd.DataFrame(confusion, index=[1,2,3,4,5], columns=[1,2,3,4,5])
+    print(confusion_df)
+    plt.clf()
+    sns.heatmap(confusion_df/np.sum(confusion_df), annot=True, fmt='.2%', cmap='Blues')
+    plt.xlabel("Predicted labels")
+    plt.ylabel("True labels")
+    plt.savefig(model_name+'-'+str(epoch)+'.png')
 
 
 def check_gpu():
@@ -218,7 +231,7 @@ def main(num_epoch, max_length, batch_size, model_name):
         loss_train_avg = loss_train_total / len(dataloader_train)
         tqdm.write(f'Training loss: {loss_train_avg}')
         # evaluate the model
-        run_evaluation(dataloader_test, model, device, encoder)
+        run_evaluation(dataloader_test, model, device, encoder, epoch, model_name)
     # save the model for future use/retrain
     torch.save({
         'epoch': num_epoch,
