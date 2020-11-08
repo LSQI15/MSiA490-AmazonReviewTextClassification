@@ -1,14 +1,17 @@
 import pandas as pd
-import matplotlib.pyplot as plt
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 from keras.models import Sequential
 from keras.layers import Dense, Embedding, LSTM, SpatialDropout1D
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import confusion_matrix
+import seaborn as sns
+import matplotlib.pyplot as plt
 from keras.callbacks import EarlyStopping
 from keras.layers import Dropout
 import argparse
 import sys
+import numpy as np
 
 
 def main(NUM_EPOCHS, BATCH_SIZE, MAX_SEQUENCE_LENGTH, model_name):
@@ -53,7 +56,7 @@ def main(NUM_EPOCHS, BATCH_SIZE, MAX_SEQUENCE_LENGTH, model_name):
     model.add(Embedding(MAX_NB_WORDS, EMBEDDING_DIM, input_length=X.shape[1]))
     model.add(SpatialDropout1D(0.2))
     model.add(LSTM(100, dropout=0.2, recurrent_dropout=0.2))
-    model.add(Dense(13, activation='softmax'))
+    model.add(Dense(5, activation='softmax'))
     model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
     print(model.summary())
 
@@ -63,11 +66,25 @@ def main(NUM_EPOCHS, BATCH_SIZE, MAX_SEQUENCE_LENGTH, model_name):
     print('Max input length: ', MAX_SEQUENCE_LENGTH)
     print('Batch size: ', BATCH_SIZE)
     history = model.fit(X_train, y_train, epochs=NUM_EPOCHS, batch_size=BATCH_SIZE, validation_split=0.1,
-                        callbacks=[EarlyStopping(monitor='val_loss', patience=3, min_delta=0.0001)])
+                        callbacks=[EarlyStopping(monitor='val_loss', patience=5, min_delta=0.0001)])
 
     # Evaluate the model on the test set
     accuracy = model.evaluate(X_test, y_test)
     print('Test set\n  Loss: {:0.3f}\n  Accuracy: {:0.3f}'.format(accuracy[0], accuracy[1]))
+
+    # Confusion Matrix
+    pred = model.predict(X_test)
+    labels = ['1', '2', '3', '4', '5']
+    y_pred_labels = [labels[x] for x in [np.argmax(x) for x in pred]]
+    y_test_labels = [labels[x] for x in [np.argmax(x) for x in y_test]]
+    confusion = confusion_matrix(y_test_labels, y_pred_labels)
+    confusion_df = pd.DataFrame(confusion,index=[1, 2, 3, 4, 5], columns=[1, 2, 3, 4, 5])
+    print(confusion_df)
+    sns.heatmap(confusion_df/np.sum(confusion_df), annot=True, fmt='.2%', cmap='Blues')
+    plt.xlabel("Predicted labels")
+    plt.ylabel("True labels")
+    plt.savefig(model_name + '-confusion_matrix' + '.png')
+    plt.clf()
 
     # Visualize training loss and validation accuracy
     plt.title('Training Loss vs Validation Accuracy')
@@ -75,6 +92,7 @@ def main(NUM_EPOCHS, BATCH_SIZE, MAX_SEQUENCE_LENGTH, model_name):
     plt.plot(history.history['val_accuracy'], label='test_accuracy')
     plt.legend()
     plt.savefig(model_name + '.png')
+    plt.clf()
 
 
 if __name__ == "__main__":
