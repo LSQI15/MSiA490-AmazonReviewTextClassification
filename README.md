@@ -109,6 +109,7 @@ micro-average or macro-average:
 #### LSTM
 
 | LSTM Model  | Number of Epoch | Max Number of Words | Max Input Length | Embedding Dimension | Batch Size  | Accuracy |
+| :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 | #1 | 9 | 50,000 | 250 | 100 | 256 | 0.693 |
 | #2 | 9 | 50,000 | 350 | 100 | 256 | 0.691 |
 | #3 | 9 | 50,000 | 428 | 100 | 256 | 0.698 |
@@ -116,6 +117,7 @@ micro-average or macro-average:
 #### Bidirectional LSTM
 
 | Bidirectional LSTM Model  | Number of Epoch | Max Number of Words | Max Input Length | Embedding Dimension | Batch Size  | Accuracy |
+| :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 | #1 | 9 | 50,000 | 256 | 100 | 512 | 0.6897 |
 | #2 | 10 | 50,000 | 350 | 100 | 512 | 0.6859 |
 | #3 | 11 | 50,000 | 512 | 100 | 256 | 0.6957 |
@@ -123,6 +125,7 @@ micro-average or macro-average:
 #### Bidirectional LSTM with Self-Attention
 
 | Bidirectional LSTM with Self-Attention  | Number of Epoch | Max Number of Words | Max Input Length | Embedding Dimension | Batch Size  | Accuracy |
+| :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 | #1 | 7 | 50,000 | 256 | 100 | 128 | 0.6948 |
 | #2 | 7 | 50,000 | 350 | 100 | 128 | 0.6955|
 | #3 | 7 | 50,000 | 512 | 100 | 64 | 0.6986 |
