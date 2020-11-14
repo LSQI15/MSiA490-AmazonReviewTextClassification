@@ -62,13 +62,42 @@ micro-average or macro-average:
 
 ##### Logistic Regression
 
-| Model   | Model Parameters  | Accuracy  | Precision  | Recall | Fscore|
-| :-----: | :----------:      | :-------: | :--------: | :----: | :----: |
-| #1 | C=1.0, class_weight=None, dual=False, fit_intercept=True,intercept_scaling=1, l1_ratio=None, max_iter=100,multi_class='auto', n_jobs=None, penalty='l2',random_state=115, solver='liblinear', tol=0.0001, verbose=0,warm_start=False | 0.654488 | 0.6171239497109519 | 0.654488| 0.6170137639430047|
+| Logistic Regression Model   | TFIDF n-gram Range | Model Parameters  | Accuracy  | Precision  | Recall | F-score|
+| :-----: | :----: | :----------:      | :-------: | :--------: | :----: | :----: |
+| #0 | (1,1) | C=1.0, class_weight=None, dual=False, fit_intercept=True,intercept_scaling=1, l1_ratio=None, max_iter=100,multi_class='auto', n_jobs=None, penalty='l2',random_state=115, solver='liblinear', tol=0.0001, verbose=0,warm_start=False | 0.6545 | 0.6171 | 0.6545 | 0.6170 |
+| #1 | (1,2) | C=1.0, class_weight=None, dual=False, fit_intercept=True,intercept_scaling=1, l1_ratio=None, max_iter=100,multi_class='auto', n_jobs=None, penalty='l2',random_state=115, solver='liblinear', tol=0.0001, verbose=0,warm_start=False | 0.6827 | 0.6580 | 0.6827 | 0.6513 |
+| #2 | (1,1) | C=1.0, class_weight=None, dual=False, fit_intercept=True,intercept_scaling=1, l1_ratio=None, max_iter=100,multi_class='auto', n_jobs=None, penalty='l1',random_state=115, solver='liblinear', tol=0.0001, verbose=0,warm_start=False | 0.6491 | 0.6087 | 0.6491 | 0.6109 |
+| #3 | (1,1) | C=2, class_weight=None, dual=False, fit_intercept=True,intercept_scaling=1, l1_ratio=None, max_iter=100,multi_class='auto', n_jobs=None, penalty='l2',random_state=115, solver='liblinear', tol=0.0001, verbose=0,warm_start=False | 0.6591 | 0.6242| 0.6591 | 0.6263 |
+
+Confusion Matrix of the best logistic regression model (#2)
+
+<img src="https://github.com/LSQI15/MSiA490-AmazonReviewTextClassification/blob/main/Model_Results/LR_2.png" width="600">
 
 ##### Support Vector Machine
 
+| Support Vector Machine Model   | TFIDF n-gram Range | Model Parameters  | Accuracy  | Precision  | Recall | F-score|
+| :-----: | :----: | :----------:      | :-------: | :--------: | :----: | :----: |
+| #0 | (1,1) | C=1.0, class_weight=None, dual=True, fit_intercept=True, intercept_scaling=1, loss='squared_hinge', max_iter=1000, multi_class='ovr', penalty='l2', random_state=115, tol=0.0001, verbose=0 | 0.6659 | 0.6351 | 0.6659 | 0.6396 |
+| #1 | (1,1) | C=1.0, class_weight=None, dual=True, fit_intercept=True, intercept_scaling=1, loss='squared_hinge', max_iter=1000, multi_class='ovr', penalty='l2', random_state=115, tol=0.0001, verbose=0 | 0.7227 | 0.7061 | 0.7227 | 0.7071 |
+| #2 | (1,2) | C=1.0, class_weight=None, dual=False, fit_intercept=True, intercept_scaling=1, loss='squared_hinge', max_iter=1000, multi_class='ovr', penalty='l2', random_state=115, tol=0.0001, verbose=0 | 0.6659 | 0.6351 | 0.6659 | 0.6396 | 
+| #3 | (1,1) | C=1.0, class_weight=None, dual=True, fit_intercept=True, intercept_scaling=1, loss='hinge', max_iter=1000, multi_class='ovr', penalty='l2', random_state=115, tol=0.0001, verbose=0 | 0.6553 | 0.6148 | 0.6553| 0.6044 |
+| #4 | (1,3) | C=1.0, class_weight=None, dual=True, fit_intercept=True, intercept_scaling=1, loss='squared_hinge', max_iter=1000, multi_class='ovr', penalty='l2', random_state=115, tol=0.0001, verbose=0 | 0.7284 | 0.7138 | 0.7284 | 0.7151 |
+
+Confusion Matrix of the best support vector machine model (#4)
+
+<img src="https://github.com/LSQI15/MSiA490-AmazonReviewTextClassification/blob/main/Model_Results/SVM_4.png" width="600">
+
 ##### Multinomial Naive Bayes
+| Multinomial Naive Bayes Model   | TFIDF n-gram Range | Model Parameters  | Accuracy  | Precision  | Recall | F-score|
+| :-----: | :----: | :----------:      | :-------: | :--------: | :----: | :----: |
+| #0 | (1,1) | alpha=1.0, class_prior=None, fit_prior=True | 0.5304 |  0.5471 | 0.5304 | 0.3790 | 
+| #1 | (1,2) | alpha=0, class_prior=None, fit_prior=True | 0.6290 | 0.6287 | 0.6290 | 0.5984 |
+| #2 | (1,1) | alpha=0, class_prior=None, fit_prior=True | 0.6111 | 0.5814 | 0.6111 | 0.5631 | 
+| #3 | (1,2) | alpha=0, class_prior=None, fit_prior=False | 0.6197 | 0.6121 | 0.6197 | 0.5967 |
+
+Confusion Matrix of the best multinomial naive bayes model (#2)
+
+<img src="https://github.com/LSQI15/MSiA490-AmazonReviewTextClassification/blob/main/Model_Results/MultinomialNB_2.png" width="600">
 
 ##### LSTM
 
