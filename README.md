@@ -6,23 +6,20 @@
 <!-- toc -->
 
 #### Project Topic
-For this project, I will conduct the comparison of three multi-class text classification approaches (BERT, LSTM, fastText).
-Specifically, I will train each of the model on the training set (80% of data) and evaluate their performance on the test 
-set (20% of data) using metrics such as accuracy, precision, recall, and F-1 score. The best model will then be productized
-to take review text(s) as input and the output corresponding predicted review score (1-5).
+For this project, I conducted the comparison of 7 multi-class text classification approaches (logistic regression, 
+support vector machine (SVM), multinomial naive bayes, BERT, LSTM, bidirectional LSTM, and bidirectional LSTM with 
+self-attention). Specifically, I will train each of the model on the training set (80% of data) and evaluate their 
+performances on the test set (20% of data) using metrics such as accuracy, precision, recall, and F-1 score. The best 
+model will then be productized to take review text(s) as input and the output corresponding predicted review score (1-5).
 
 #### Dataset
-The dataset chosen for this project is Kindle Store Review data from [Amazon Review Data (2018)](http://deepyeti.ucsd.edu/jianmo/amazon/index.html). 
+The dataset chosen for this project is Amazon video review data from [Amazon Review Data](https://snap.stanford.edu/data/web-Amazon.html). 
+The raw dataset contains information such as reviews (ratings, text, helpfulness votes) and product metadata 
+(descriptions, category information, price, brand, and image features) for 717,651 reviews. Due to computational 
+limitation, only the first 500,000 records are used in this text classification project. Each record has the overall 
+review score (integer from 1 to 5) and the review text (string)
 
-This dataset is an updated version of the Amazon review dataset released in 2014. The raw dataset contains information 
-such as reviews (ratings, text, helpfulness votes) and product metadata (descriptions, category information, price, 
-brand, and image features) for 5,722,988 reviews in Amazon Kindle Store.
-
-Due to computational limitation, only the first 1,000,000 records are used in this text classification project. Each 
-record has the overall review score (integer from 1 to 5), the review text (string), and the datetime (yyyy-mm-dd) on 
-which the review was written.
-
-Link to dataset: http://deepyeti.ucsd.edu/jianmo/amazon/index.html
+Link to dataset: https://snap.stanford.edu/data/web-Amazon.html
 
 #### Literature Survey
 
@@ -60,6 +57,27 @@ micro-average or macro-average:
 
     * A macro-average will compute the metric independently for each class and then take the average (gives each class equal weight).
     * A micro-average will aggregate the contributions of all classes to compute the average metric (gives each classification instance equal weight).
+    
+#### Model Results
+
+##### Logistic Regression
+
+| Model   | Model Parameters  | Accuracy  | Precision  | Recall | Fscore|
+| :-----: | :----------:      | :-------: | :--------: | :----: | :----: |
+| #1 | C=1.0, class_weight=None, dual=False, fit_intercept=True,intercept_scaling=1, l1_ratio=None, max_iter=100,multi_class='auto', n_jobs=None, penalty='l2',random_state=115, solver='liblinear', tol=0.0001, verbose=0,warm_start=False | 0.654488 | 0.6171239497109519 | 0.654488| 0.6170137639430047|
+
+##### Support Vector Machine
+
+##### Multinomial Naive Bayes
+
+##### LSTM
+
+##### Bidirectional LSTM
+
+##### Bidirectional LSTM with Self-Attention
+
+##### BERT
+
 
 #### Citation
 
