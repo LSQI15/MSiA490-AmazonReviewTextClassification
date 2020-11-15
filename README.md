@@ -119,19 +119,35 @@ micro-average or macro-average:
 | Bidirectional LSTM Model  | Number of Epoch | Max Number of Words | Max Input Length | Embedding Dimension | Batch Size  | Accuracy |
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 | #1 | 9 | 50,000 | 256 | 100 | 512 | 0.6897 |
-| #2 | 10 | 50,000 | 350 | 100 | 512 | 0.6859 |
-| #3 | 11 | 50,000 | 512 | 100 | 256 | 0.6957 |
+| #2 | 9 | 50,000 | 256 | 100 | 256 | 0.6948 |
+| #3 | 10 | 50,000 | 350 | 100 | 512 | 0.6859 |
+| #4 | 9 | 50,000 | 350 | 100 | 256 |  0.6970 |
+| #5 | 11 | 50,000 | 512 | 100 | 256 | 0.6957 |
+
 
 #### Bidirectional LSTM with Self-Attention
 
-| Bidirectional LSTM with Self-Attention  | Number of Epoch | Max Number of Words | Max Input Length | Embedding Dimension | Batch Size  | Accuracy |
+| Bidirectional LSTM with Self-Attention Model | Number of Epoch | Max Number of Words | Max Input Length | Embedding Dimension | Batch Size  | Accuracy |
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 | #1 | 7 | 50,000 | 256 | 100 | 128 | 0.6948 |
 | #2 | 7 | 50,000 | 350 | 100 | 128 | 0.6955|
 | #3 | 7 | 50,000 | 512 | 100 | 64 | 0.6986 |
-
+| #4 | 7 | 100,000| 512 | 256 | 64 | 0.7091 |
 
 #### BERT
+
+| BERT Model  | Number of Epoch | Max Input Length | Batch Size  | Accuracy |
+| :----: | :----: | :----: | :----: | :----: |
+| #1 | 15 | 25 | 256 | 0.6552 |
+| #2 | 9 | 50 | 256 | 0.6836 |
+| #3 | 10 | 75 | 128 | 0.7077 |
+| #4 | 8 | 150 | 64 | 0.7344 |
+| #5 | 9 | 200 | 64 | 0.7410 |
+| #6 | 7 | 250 | 16 | 0.7487 |
+| #7 | 10 | 300 | 16 | 0.7512 |
+| #8 | 8 | 350 | 8 | 0.7552 |
+| #9 | 10 | 428 | 8 | 0.7557 |
+
 
 
 ### Citation
