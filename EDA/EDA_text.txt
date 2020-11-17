@@ -10,26 +10,26 @@
 8      5  i initially bought the movie just because step...
 9      4  this movie was fun to watch although it drags ...
 
-Number of reviews: 717651
+Number of reviews: 500000
 
-Average length of reviews: 782.9289863735994
+Average length of reviews: 775.39494
 Five-number summary statistics:
-count    717651.000000
-mean        782.928986
-std         992.912937
+count    500000.000000
+mean        775.394940
+std         984.282593
 min           1.000000
-25%         193.000000
-50%         428.000000
-75%         960.000000
-max       31860.000000
+25%         191.000000
+50%         422.000000
+75%         948.000000
+max       31712.000000
 Name: reviewText, dtype: float64
 
 Number of unique labels: 5
 
 Value counts for each review score (1-5)
-5    371586
-4    144444
-3     77958
-1     74649
-2     49014
+5    260878
+4     99220
+3     53620
+1     52429
+2     33853
 Name: score, dtype: int64
