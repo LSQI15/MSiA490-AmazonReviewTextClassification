@@ -67,7 +67,7 @@ def main():
     in_file_path = 'Data/processed_video_reviews.csv'
     score_distribution_graph = 'EDA/score_distribution_graph.png'
 
-    df = read_data(in_file_path)
+    df = read_data(in_file_path).head(500000)
     df['reviewText'] = df['reviewText'].astype(str)
     dataset_stats(df)
     overall_score_eda(df, score_distribution_graph)
