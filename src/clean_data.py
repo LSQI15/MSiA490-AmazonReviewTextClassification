@@ -36,8 +36,8 @@ def main():
     main function to clean the preprocessed data
     :return: None
     """
-    in_file_path = 'Data/video_reviews.csv'
-    out_file_path = 'Data/processed_video_reviews.csv'
+    in_file_path = '../Data/video_reviews.csv'
+    out_file_path = '../Data/processed_video_reviews.csv'
     df = pd.read_csv(in_file_path).dropna()  # some reviews have only score, so drop them
     processed_df = clean(df, 'reviewText')  # clean all reviews
     processed_df.to_csv(out_file_path, index=False)

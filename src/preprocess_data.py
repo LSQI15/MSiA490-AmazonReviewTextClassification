@@ -50,7 +50,7 @@ def main():
     :return: None
     """
     in_file_path = '/Users/siqili/Downloads/Amazon_Instant_Video.txt.gz'
-    out_file_path = 'Data/video_reviews.csv'
+    out_file_path = '../Data/video_reviews.csv'
     columns_to_keep = ['score', 'reviewText']
     preprocessed_data = data_preprocess(in_file_path, columns_to_keep)
     preprocessed_data.to_csv(out_file_path, index=False)

@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import sys
 
-sys.stdout = open('EDA/EDA_text.txt', 'w')
+sys.stdout = open('../EDA/EDA_text.txt', 'w')
 
 
 def read_data(file_path):
@@ -64,7 +64,7 @@ def main():
     main function to do exploratory data analysis
     :return: None
     """
-    in_file_path = 'Data/processed_video_reviews.csv'
+    in_file_path = '../Data/processed_video_reviews.csv'
     score_distribution_graph = 'EDA/score_distribution_graph.png'
 
     df = read_data(in_file_path).head(500000)

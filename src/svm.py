@@ -1,6 +1,6 @@
 from sklearn.model_selection import train_test_split
 from sklearn.svm import LinearSVC
-from helper import model_training_testing
+from src.helper import model_training_testing
 import pandas as pd
 
 
@@ -44,7 +44,7 @@ def main():
     :return: None
     """
     num_rows = 500000
-    review_df = pd.read_csv("Data/processed_video_reviews.csv").dropna().head(num_rows)
+    review_df = pd.read_csv("../Data/processed_video_reviews.csv").dropna().head(num_rows)
     # train and test set split
     X_train, X_test, y_train, y_test = train_test_split(review_df['reviewText'], review_df['score'],
                                                         random_state=115)
