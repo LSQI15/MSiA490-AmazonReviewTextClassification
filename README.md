@@ -109,6 +109,9 @@ review score (integer from 1 to 5) and the review text (string)
 | #9 | 10 | 428 | 8 | 0.7557 |
 | #10 | 7 | 512 | 8 | 0.7580 |  
 
+### Web App for Amazon Review Text Classification
+<img src="https://github.com/LSQI15/MSiA490-AmazonReviewTextClassification/blob/main/app/static/demo.png" width="800">
+
 
 ### Citation
 * Cam P. Covid-19 Tweets EDA, Classification, BERT. Kaggle. Available at: https://www.kaggle.com/campudney/covid-19-tweets-eda-classification-bert/comments
