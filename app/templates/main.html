@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Roboto';
+            margin: 15px
+        }
+
+        h2 {
+            text-align: center;
+            color: #004686;
+            font-weight: 500;
+            font-size: 30px;
+            margin-top: 80px;
+        }
+
+        h3 {
+            font-size: 16px;
+            text-align: center;
+        }
+
+        h4 {
+            font-size: 20px;
+            color: #575757;
+        }
+
+        img {
+            width: 219px;
+            height: 117px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        title {
+            background-color: burlywood;
+        }
+
+        textarea {
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        textarea::placeholder {
+            color: #afafaf;
+        }
+
+        input {
+            border-radius: 30px;
+            color: #ffffff;
+            padding: 12px;
+        }
+
+        .btn-info {
+            background-color: #003e86;
+            border-color: #003e86;
+            padding-top: 10px;
+            padding-right: 26px;
+            padding-bottom: 10px;
+            padding-left: 26px;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .btn-info:hover {
+            background-color: #005AC5;
+            border-color: #005AC5;
+        }
+
+        h5 {
+            margin-bottom: 30px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .inputarea {
+            display: flex;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div style="text-align: center;">
+
+    <h2>Amazon Review Classifer</h2>
+
+
+    <h3>Predicting Amazon review score using support vector machine model with ti-idf feature representations</h3>
+
+    <img src="{{url_for('static', filename='image.png')}}" alt="coder working on deep learning" class="center">
+
+    <div class="inputarea">
+        <form action="{{ url_for('predict')}}" method="POST">
+        <textarea name="review" rows=4 cols=60
+                  placeholder="Please enter the review you wish to predict here"></textarea>
+            <br/>
+            <h5>Review Text: {{ review }}</h5>
+            <input type="submit" class="btn-info" value="Predict">
+        </form>
+    </div>
+
+
+    <h4>This review most likely have a rating of</h4>
+    <p style=" color: #003e86; font-size: 30px">{{ prediction_text }}</p>
+
+
+</div>
+</body>
