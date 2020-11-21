@@ -79,7 +79,7 @@ in the test set, which was an 3.91% increase from the best. SVM model. The follo
 matrix for the best BERT model. While the overall accuracy is satisfying, the model still has a potential for 
 improvement, especially for correctly distinguishing. reviews with 4 and 5 stars.
 
-<img src="https://github.com/LSQI15/MSiA490-AmazonReviewTextClassification/blob/main/Model_Results/BERT-max_length512batch_size8num_epoch7.png" width="800">
+<img src="https://github.com/LSQI15/MSiA490-AmazonReviewTextClassification/blob/main/Model_Results/BERT-max_length512batch_size8num_epoch7.png" width="400">
 
 * One limitation is that while BERT model has the best text classification performance, it took a much longer time to 
 train, compared to LSTM and other traditional machine learning models. The best BERT model, for instance, needed more 
@@ -88,6 +88,12 @@ to train on an Intel 4-Core i7 CPU. If hardware permits, training BERT model wit
 to an even better performance than I currently had in this work.
 
 #### Logistic Regression
+
+To train and evaluate logistic regression models, run
+
+```shell script
+python3 src/logistic_regression.py
+```
 
 | Logistic Regression Model   | TFIDF n-gram Range | Model Parameters  | Accuracy  | Precision  | Recall | F-score|
 | :-----: | :----: | :----------:      | :-------: | :--------: | :----: | :----: |
@@ -98,6 +104,12 @@ to an even better performance than I currently had in this work.
 
 #### Support Vector Machine
 
+To train and evaluate svm models, run
+
+```shell script
+python3 src/svm.py
+```
+
 | Support Vector Machine Model   | TFIDF n-gram Range | Model Parameters  | Accuracy  | Precision  | Recall | F-score|
 | :-----: | :----: | :----------:      | :-------: | :--------: | :----: | :----: |
 | #0 | (1,1) | C=1.0, class_weight=None, dual=True, fit_intercept=True, intercept_scaling=1, loss='squared_hinge', max_iter=1000, multi_class='ovr', penalty='l2', random_state=115, tol=0.0001, verbose=0 | 0.6659 | 0.6351 | 0.6659 | 0.6396 |
@@ -107,6 +119,13 @@ to an even better performance than I currently had in this work.
 | #4 | (1,3) | C=1.0, class_weight=None, dual=True, fit_intercept=True, intercept_scaling=1, loss='squared_hinge', max_iter=1000, multi_class='ovr', penalty='l2', random_state=115, tol=0.0001, verbose=0 | 0.7284 | 0.7138 | 0.7284 | 0.7151 |
 
 #### Multinomial Naive Bayes
+
+To train and evaluate multinomial naive bayes models, run
+
+```shell script
+python3 src/MultinomialNB.py
+```
+
 | Multinomial Naive Bayes Model   | TFIDF n-gram Range | Model Parameters  | Accuracy  | Precision  | Recall | F-score|
 | :-----: | :----: | :----------:      | :-------: | :--------: | :----: | :----: |
 | #0 | (1,1) | alpha=1.0, class_prior=None, fit_prior=True | 0.5304 |  0.5471 | 0.5304 | 0.3790 | 
@@ -116,6 +135,12 @@ to an even better performance than I currently had in this work.
 
 #### LSTM
 
+To train and evaluate one directional LSTM, run
+
+```shell script
+python3 src/LSTM.py --num_epoch=NUM_EPOCH --max_length=MAX_LENGTH --batch_size=BATCH_SIZE
+```
+
 | LSTM Model  | Number of Epoch | Max Number of Words | Max Input Length | Embedding Dimension | Batch Size  | Accuracy |
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 | #1 | 9 | 50,000 | 250 | 100 | 256 | 0.693 |
@@ -123,6 +148,12 @@ to an even better performance than I currently had in this work.
 | #3 | 9 | 50,000 | 428 | 100 | 256 | 0.698 |
 
 #### Bidirectional LSTM
+
+To train and evaluate bi-directional LSTM, run
+
+```shell script
+python3 src/Bidirectional_LSTM.py --num_epoch=NUM_EPOCH --max_length=MAX_LENGTH --batch_size=BATCH_SIZE
+```
 
 | Bidirectional LSTM Model  | Number of Epoch | Max Number of Words | Max Input Length | Embedding Dimension | Batch Size  | Accuracy |
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
@@ -135,6 +166,12 @@ to an even better performance than I currently had in this work.
 
 #### Bidirectional LSTM with Self-Attention
 
+To train and evaluate bidirectional LSTM with self-attention, run
+
+```shell script
+python3 src/Bidirectional_LSTM_with_SelfAttention.py --num_epoch=NUM_EPOCH --max_length=MAX_LENGTH --batch_size=BATCH_SIZE
+```
+
 | Bidirectional LSTM with Self-Attention Model | Number of Epoch | Max Number of Words | Max Input Length | Embedding Dimension | Batch Size  | Accuracy |
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 | #1 | 7 | 50,000 | 256 | 100 | 128 | 0.6948 |
@@ -143,6 +180,12 @@ to an even better performance than I currently had in this work.
 | #4 | 7 | 100,000| 512 | 256 | 64 | 0.7091 |
 
 #### BERT
+
+To train and evaluate BERT model, run
+
+```shell script
+python3 src/BERT.py --num_epoch=NUM_EPOCH --max_length=MAX_LENGTH --batch_size=BATCH_SIZE
+```
 
 | BERT Model  | Number of Epoch | Max Input Length | Batch Size  | Accuracy |
 | :----: | :----: | :----: | :----: | :----: |
