@@ -11,6 +11,7 @@
 
 - [Project Topic](#project-topic)
 - [Dataset](#dataset)
+- [Web App for Amazon Review Text Classification](#web-app-for-amazon-review-text-classification)
 - [Model Results](#model-results)
     * [1. Logistic Regression](#logistic-regression)
     * [2. Support Vector Machine](#support-vector-machine)
@@ -24,20 +25,67 @@
 <!-- toc -->
 
 ### Project Topic
-For this project, I conducted the comparison of 7 multi-class text classification approaches (logistic regression, 
+In this project, I trained, fine-tuned, and evaluated 7 multi-class text classification approaches (logistic regression, 
 support vector machine (SVM), multinomial naive bayes, BERT, LSTM, bidirectional LSTM, and bidirectional LSTM with 
-self-attention). Specifically, I will train each of the model on the training set (80% of data) and evaluate their 
-performances on the test set (20% of data) using metrics such as accuracy, precision, recall, and F-1 score. The best 
-model will then be productized to take review text(s) as input and the output corresponding predicted review score (1-5).
+self-attention). Specifically, each model was trained on the training set (80% of data) and evaluated on the test 
+set (20% of data) using metrics such as accuracy, precision, recall, and F-1 score. The best model in terms of not only 
+accuracy but also ease to use was also productized as a flask web app to take review text as input and the output the 
+corresponding predicted review score (1-5).
 
 ### Dataset
 The dataset chosen for this project is Amazon video review data from [Amazon Review Data](https://snap.stanford.edu/data/web-Amazon.html). 
 The raw dataset contains information such as reviews (ratings, text, helpfulness votes) and product metadata 
 (descriptions, category information, price, brand, and image features) for 717,651 reviews. Due to computational 
 limitation, only the first 500,000 records are used in this text classification project. Each record has the overall 
-review score (integer from 1 to 5) and the review text (string)
+review score (integer from 1 to 5) and the review text (string).
+
+### Web App for Amazon Review Text Classification
+
+To run the web app, please clone the Github repo and run the following command in terminal.
+
+```shell script
+git clone git@github.com:LSQI15/MSiA490-AmazonReviewTextClassification.git
+cd MSiA490-AmazonReviewTextClassification
+pip install -r requirements.txt
+python3 app/generate_artifacts.py
+phthon3 app/app.py
+```
+
+The app will then be accessible on http://127.0.0.1:5000/. Press  CTRL+C to at any time to quit.
+
+<img src="https://github.com/LSQI15/MSiA490-AmazonReviewTextClassification/blob/main/app/static/demo.png" width="800">
     
 ### Model Results
+
+* Among traditional machine learning models, support vector machine model out-performed logistic regression model and 
+multinomial naïve bayes models. The best SVM model used L-2 penalty, square-hinge loss, TF-IDF feature representation 
+of unigram, bigram, and trigram, and achieved a multi-class accuracy of 0.7284 on the test set. In addition, increasing 
+n-gram range of TF-IDF from using only 1-gram to using 1-gram to 3-gram significantly helped boost the performance for 
+logistic regression model (0.6548 to 0.6827) and SVM models (0.6659 to 0.7284).
+
+* Various LSTM models were trained and evaluated, but they all have similar results (~69%). One thing I noticed was that 
+batch size seemed to be related to model accuracy. Specifically, a smaller batch size seemed to lead to a higher accuracy
+for bidirectional LSTM model. This reflects Kevin’s (2018) finding that higher batch sizes leaded to lower asymptotic 
+test accuracy with a multi-layer perceptron (MLP) model. Moreover, adding a self-attention layer didn’t improve model 
+performance a lot in this work. Other model parameters or structure are needed to be fine-tuned in order to boost LSTM’s
+performance. Overall, the bidirectional LSTM model with an embedding size of 256, a max number of words of 100,000, a 
+batch size of 64 and a self-attention layer had the best accuracy of 0.7091 on the test set.
+
+* For BERT model, due to computational limits, only max input length was fine-tuned. The results show that the greater the
+input length, the higher the classification accuracy. This could be explained by the fact that the average review 
+length is 775.5, and with longer input length, BERT models can extract more information to make a better classification. 
+The best BERT model had max length of input equal to 512 and a batch size equal to 8. It achieved an accuracy of 0.75802 
+in the test set, which was an 3.91% increase from the best. SVM model. The following graph shows the normalized confusion 
+matrix for the best BERT model. While the overall accuracy is satisfying, the model still has a potential for 
+improvement, especially for correctly distinguishing. reviews with 4 and 5 stars.
+
+<img src="https://github.com/LSQI15/MSiA490-AmazonReviewTextClassification/blob/main/Model_Results/BERT-max_length512batch_size8num_epoch7.png" width="800">
+
+* One limitation is that while BERT model has the best text classification performance, it took a much longer time to 
+train, compared to LSTM and other traditional machine learning models. The best BERT model, for instance, needed more 
+than 5 hours to train an epoch using a NVIDIA GeForce RTX 2080 Ti GPU, while the best SVM model took only 20 minutes 
+to train on an Intel 4-Core i7 CPU. If hardware permits, training BERT model with a higher max input length may lead 
+to an even better performance than I currently had in this work.
 
 #### Logistic Regression
 
@@ -108,9 +156,6 @@ review score (integer from 1 to 5) and the review text (string)
 | #8 | 8 | 350 | 8 | 0.7552 |
 | #9 | 10 | 428 | 8 | 0.7557 |
 | #10 | 7 | 512 | 8 | 0.7580 |  
-
-### Web App for Amazon Review Text Classification
-<img src="https://github.com/LSQI15/MSiA490-AmazonReviewTextClassification/blob/main/app/static/demo.png" width="800">
 
 
 ### Citation
