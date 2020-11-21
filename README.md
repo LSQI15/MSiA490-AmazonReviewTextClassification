@@ -75,9 +75,14 @@ batch size of 64 and a self-attention layer had the best accuracy of 0.7091 on t
 input length, the higher the classification accuracy. This could be explained by the fact that the average review 
 length is 775.5, and with longer input length, BERT models can extract more information to make a better classification. 
 The best BERT model had max length of input equal to 512 and a batch size equal to 8. It achieved an accuracy of 0.75802 
-in the test set, which was an 3.91% increase from the best. SVM model. The following graph shows the normalized confusion 
-matrix for the best BERT model. While the overall accuracy is satisfying, the model still has a potential for 
-improvement, especially for correctly distinguishing. reviews with 4 and 5 stars.
+in the test set, which was an 3.91% increase from the best SVM model. 
+
+<img src="https://github.com/LSQI15/MSiA490-AmazonReviewTextClassification/blob/main/Model_Results/BERT%20MODELS%20-%20Accuracy%20vs.%20Max%20Input%20Length.png" width="400">
+
+
+* The following graph shows the normalized confusion matrix for the best BERT model. While the overall accuracy is 
+satisfying, the model still has a potential for improvement, especially for correctly distinguishing reviews with 4 
+and 5 stars.
 
 <img src="https://github.com/LSQI15/MSiA490-AmazonReviewTextClassification/blob/main/Model_Results/BERT-max_length512batch_size8num_epoch7.png" width="400">
 
