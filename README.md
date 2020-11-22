@@ -48,7 +48,7 @@ git clone git@github.com:LSQI15/MSiA490-AmazonReviewTextClassification.git
 cd MSiA490-AmazonReviewTextClassification
 pip install -r requirements.txt
 python3 app/generate_artifacts.py
-phthon3 app/app.py
+phthon3 app/api.py
 ```
 
 The app will then be accessible on http://127.0.0.1:5000/. Press  CTRL+C to at any time to quit.
