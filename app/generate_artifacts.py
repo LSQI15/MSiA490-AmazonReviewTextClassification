@@ -34,7 +34,7 @@ def main():
     :return: None
     """
     num_rows = 500000
-    review_df = pd.read_csv(os.path.join(os.path.dirname(__file__), "../Data/processed_video_reviews.csv")).dropna().head(num_rows)
+    review_df = pd.read_csv("s3://msia490project/processed_video_reviews.csv").dropna().head(num_rows)
     # train and test set split
     X_train, X_test, y_train, y_test = train_test_split(review_df['reviewText'], review_df['score'],
                                                         random_state=115)
