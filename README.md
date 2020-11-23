@@ -53,7 +53,7 @@ phthon3 app/api.py
 
 The app will then be accessible on http://127.0.0.1:5000/. Press  CTRL+C to at any time to quit.
 
-<img src="https://github.com/LSQI15/MSiA490-AmazonReviewTextClassification/blob/main/app/static/demo.png" width="800">
+<img src="https://github.com/LSQI15/MSiA490-AmazonReviewTextClassification/blob/main/Deliverables/app_demo.gif" width="800">
     
 ### Model Results
 
