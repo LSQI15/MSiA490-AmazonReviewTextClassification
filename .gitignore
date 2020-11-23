@@ -2,3 +2,5 @@
 .ipynb_checkpoints/
 Data/
 __pycache__
+app/best_svm.pkl
+app/tfidf_vectorizer.pkl
